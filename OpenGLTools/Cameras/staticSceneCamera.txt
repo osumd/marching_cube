@@ -1,0 +1,57 @@
+P = projection
+
+b = objectBounding, vec8,
+b(o) = objectBoundingOrigin
+d = distance, default [fit bounding], scalar
+vp = viewPadding
+c = direction from camera to object
+
+position:
+p = translation relative from object bounding center
+t = 3d euler angle on object bounding sphere, using d
+let p_ = (p || t)
+
+
+let x = vertex
+transformation:
+(x*(p_)*(d+vp))*"lookAt(b(0))"
+
+
+p_
+: cartesian,
+cameraPos = (d+vp)(p-b(0))
+
+
+: spherical
+c,r,tx,ty,tz
+p(x)
+r*cos(ty),r*sin(tx),r*sin(ty)cos(tx)
+
+x: r(0,sin(tx),cos(tx))
+y: (cos(ty),0,sin(ty))
+z: (cos(tz),sin(tz),0)
+
+x: cos(ty)cos(tz)
+y: sin(tx)sin(tz)
+z: cos(tx)sin(ty)
+
+lookAt, example
+
+let f = normalize(center-eye) ; eyeToCenter
+let s = normalize(cross(f,up)) ; orthogonal forward vector, and up, so right or left
+let u = cross(f,s) ; orthogonal to forward and right or left, 
+
+[
+	s.x,u.x,f.x,0		
+	s.y,u.y,f.y,0
+	s.z,u.z,f.z,0
+	-dot(s,eye),-dot(u, eye),-dot(f,eye),0
+]
+
+[x, y, z]
+
+s.x x + u.x y + f.x z + 0
+
+
+
+

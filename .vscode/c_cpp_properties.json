@@ -1,0 +1,36 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}\\OpenGLTools",
+                "${workspaceFolder}\\OpenGLTools\\Cameras",
+                "${workspaceFolder}\\OpenGLTools\\Collisions",
+                "${workspaceFolder}\\OpenGLTools\\Geometry",
+                "${workspaceFolder}\\OpenGLTools\\glmmath",
+                "${workspaceFolder}\\Objects",
+                "${workspaceFolder}\\Objects\\InstancedGeometry",
+                "${workspaceFolder}\\Objects\\GraphicVector",
+                "${workspaceFolder}\\Objects\\BoundingVolume",
+                "${workspaceFolder}\\Objects\\Frustrum",
+                "${workspaceFolder}\\CStringTools",
+                "${workspaceFolder}\\MarchingCubes",
+                "${workspaceFolder}\\MarchingCubes\\primitives",
+                "${workspaceFolder}\\VolParser",
+                "${workspaceFolder}/../Dependencies/GLEW/include",
+                "${workspaceFolder}/../Dependencies/GLFW/include",
+                "${workspaceFolder}/../Dependencies/vendor"
+
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "cStandard": "gnu17",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "windows-gcc-x64"
+        }
+    ],
+    "version": 4
+}
